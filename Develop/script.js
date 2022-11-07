@@ -54,6 +54,33 @@ function randomize(array) {
   var randomArray = array[Index];
 }
 
+function passwordGen() {
+  var totalOptions = passwordPrompt();
+  var results = [];
+  var totalCharacters = [];
+  var inputCharacters = [];
+
+  if (!totalOptions);
+  return;
+
+  if (totalOptions.lowerCase) {
+    totalCharacters = totalCharacters.concat(lowercaseLetters);
+    inputCharacters.push(randomize(lowercaseLetters));
+  }
+  if (totalOptions.upperCase) {
+    totalCharacters = totalCharacters.concat(capitalLetters);
+    inputCharacters.push(randomize(capitalLetters));
+  }
+  if (totalOptions.incNumbers) {
+    totalCharacters = totalCharacters.concat(numbers);
+    inputCharacters.push(randomize(numbers));
+  }
+  if (totalOptions.incSymbols) {
+    totalCharacters = totalCharacters.concat(symbols);
+    inputCharacters.push(randomize(symbols));
+  }
+}
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
