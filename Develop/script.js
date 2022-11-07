@@ -7,6 +7,10 @@ var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
 // User prompt
 function passwordPrompt() {
+  var length = parseInt(
+  window.prompt("How long would you like your password to be?"),
+  );
+
   if (Number.isNaN(length)) {
     window.alert("Password length must be entered with numbers, try again");
     return;
@@ -49,9 +53,10 @@ function passwordPrompt() {
 }
 
 // Calling on random array
-function randomize(array) {
-  var Index = Math.floor(Math.random() * array.length);
-  var randomArray = array[Index];
+function randomize(arr) {
+  var Index = Math.floor(Math.random() * arr.length);
+  var randomArray = arr[Index];
+  return randomArray;
 }
 
 function passwordGen() {
@@ -60,8 +65,7 @@ function passwordGen() {
   var totalCharacters = [];
   var inputCharacters = [];
 
-  if (!totalOptions);
-  return;
+  if (!totalOptions) return;
 
   if (totalOptions.lowerCase) {
     totalCharacters = totalCharacters.concat(lowercaseLetters);
@@ -79,6 +83,14 @@ function passwordGen() {
     totalCharacters = totalCharacters.concat(symbols);
     inputCharacters.push(randomize(symbols));
   }
+  for (var x = 0; x < totalOptions.length; x++) {
+    var generated = randomize(totalCharacters);
+    results.push(generated);
+  }
+  for (var x = 0; x < inputCharacters.length; x++) {
+    results[x] = inputCharacters[x];
+  }
+  return results.join("");
 }
 
 // Assignment Code
@@ -86,7 +98,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = passwordGen();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
