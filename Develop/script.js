@@ -16,12 +16,12 @@ function passwordPrompt() {
     return;
   }
 
-  if (length > 128) {
+  if (length >= 129) {
     window.alert("Password length is too long, try again");
     return;
   }
 
-  if (length < 8) {
+  if (length <= 7) {
     window.alert("Password length is too short, try again");
     return;
   }
@@ -65,7 +65,8 @@ function passwordGen() {
   var totalCharacters = [];
   var inputCharacters = [];
 
-  if (!totalOptions) return;
+  if (!totalOptions) 
+  return;
 
   if (totalOptions.lowerCase) {
     totalCharacters = totalCharacters.concat(lowercaseLetters);
