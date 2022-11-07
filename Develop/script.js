@@ -40,6 +40,16 @@ function passwordPrompt() {
   var lowerCase = confirm("If you would like lowercase letters, click OK");
   var upperCase = confirm("If you would like uppercase letters, click OK");
   var incNumbers = confirm ("If you would like numbers, click OK");
-  var specialSymbols = confirm("If you would like symbols, press OK");
+  var incSymbols = confirm("If you would like symbols, press OK");
   
+  // Checking if user selected any of the above options
+  if(
+    lowerCase === false &&
+    upperCase === false &&
+    incNumbers === false &&
+    incSymbols === false
+  ) {
+    window.alert("Must have one or more character types");
+    return;
+  }
 }
