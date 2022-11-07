@@ -48,6 +48,12 @@ function passwordPrompt() {
   return userInput;
 }
 
+// Calling on random array
+function randomize(array) {
+  var Index = Math.floor(Math.random() * array.length);
+  var randomArray = array[Index];
+}
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
