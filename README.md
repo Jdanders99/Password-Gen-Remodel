@@ -9,7 +9,7 @@ Used to help generate a password that users can make their own by choice of how 
 ![Image of Passwword Generator](assets/images/screenshot.png)
 
 ## Links
-Live URL:
+Live URL: https://jdanders99.github.io/Password-Gen-Remodel/
 GitHub Repo: https://github.com/Jdanders99/Password-Gen-Remodel
 
 ## License
